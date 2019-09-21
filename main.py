@@ -22,8 +22,8 @@ def run_language():
     document = types.Document(content=text, type=enums.Document.Type.PLAIN_TEXT)
 
     # Retrieve response from Natural Language API's analyze_entities() method
-    response = client.analyze_entities(document)
-    entities = response.entities
+    # response = client.analyze_entities(document)
+    # entities = response.entities
 
     # Retrieve response from Natural Language API's analyze_sentiment() method
     response = client.analyze_sentiment(document)
