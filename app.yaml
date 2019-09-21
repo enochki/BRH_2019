@@ -4,3 +4,4 @@ entrypoint: gunicorn -b :$PORT main:app
 
 env_variables:
   CLOUD_STORAGE_BUCKET: hackathon_2019_brh
+
