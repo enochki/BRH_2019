@@ -1,6 +1,6 @@
 runtime: python37
 entrypoint: gunicorn -b :$PORT main:app
-# If the path is empty, show static index.html file
+
 handlers:
     - url: /static
       static_dir: public

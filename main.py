@@ -16,7 +16,7 @@ def homepage():
 def score(annotations):
     sum = 0.0
     count = 0.0
-    for index, sentence in enumerate(annotations.sentences):
+    for sentence in enumerate(annotations.sentences):
         sentence_sentiment = sentence.sentiment.score
         if (sentence_sentiment != 0.0):
             sum = sum + (sentence_sentiment * sentence.sentiment.magnitude)
@@ -35,16 +35,17 @@ def run_language():
 
     # Retrieve response from Natural Language API's analyze_sentiment() method
     response = client.analyze_sentiment(document)
-    annotations = response.document_sentiment
+    sentiment = response.document_sentiment
 
-    sedcscore= score(annotations)
+    sedcscore= score(sentiment)
 
 
     # Return a Jinja2 HTML template of the homepage and pass the 'text', 'entities',
     # and 'sentiment' variables to the frontend. These contain information retrieved
     # from the Natural Language API.
-    return render_template('homepage.html', text=text, sentiment=annotations,score=sedcscore )
 
+    return render_template('homepage.html', text=text, sentiment=sentiment,score=sedcscore )
+    # return render_template('homepage.html', text=text, sentiment=annotations,sentiment=sentiment)
 
 
 
