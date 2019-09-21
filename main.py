@@ -43,7 +43,7 @@ def run_language():
     # Return a Jinja2 HTML template of the homepage and pass the 'text', 'entities',
     # and 'sentiment' variables to the frontend. These contain information retrieved
     # from the Natural Language API.
-    return render_template('homepage.html', text=text, sentiment=sentiment)
+    return render_template('homepage.html', text=text, sentiment=annotations,score=sedcscore )
 
 
 
